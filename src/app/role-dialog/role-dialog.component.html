@@ -1,0 +1,98 @@
+<mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="roleForm" errorMessage="Name is required.">
+      <form [formGroup]="roleForm">
+        <ng-template matStepLabel>Fill out Role name</ng-template>
+        <mat-form-field>
+          <input matInput placeholder="Role Name" formControlName="name" required>
+        </mat-form-field>
+        <mat-slide-toggle formControlName="isActive" [checked]="false">Active </mat-slide-toggle>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="accessForm" errorMessage="Address is required.">
+      <form [formGroup]="accessForm">
+        <ng-template matStepLabel>Fill out Access</ng-template>
+        <div style="display: flex;justify-content: space-between;">
+            <p style="width:33%">Description</p>
+            <p>Web</p>
+            <p>Mobile</p>              
+        </div>
+        <div formGroupName="home" class="sub-form">
+            <p style="width:33%">Home</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="trips" class="sub-form">
+            <p style="width:33%">Trips</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="past_trips" class="sub-form">
+            <p style="width:33%">Past Trips</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="create_trip" class="sub-form">
+            <p style="width:33%">Create Trip</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="alerts" class="sub-form">
+            <p style="width:33%">Alerts</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="alert_management" class="sub-form">
+            <p style="width:33%">Alert Management</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="sensors" class="sub-form">
+            <p style="width:33%">Sensors</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="add_sensors" class="sub-form">
+            <p style="width:33%">Add Sensors</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="routes" class="sub-form">
+            <p style="width:33%">Routes</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="add_routes" class="sub-form">
+            <p style="width:33%">Add Routes</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="users" class="sub-form">
+            <p style="width:33%">Users</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="dashboard" class="sub-form">
+            <p style="width:33%">Dashboard</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="report" class="sub-form">
+            <p style="width:33%">Report</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div formGroupName="role_settings" class="sub-form">
+            <p style="width:33%">Role Settings</p>
+            <mat-checkbox formControlName="web"></mat-checkbox>
+            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext (click)="submitRoleData()">Submit</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-horizontal-stepper>
