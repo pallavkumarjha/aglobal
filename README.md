@@ -1,27 +1,34 @@
-# Aglobal
+# Antarctica Global Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+This Angular project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
-## Development server
+## Dependency
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Angular material
 
-## Code scaffolding
+## Functionalities Implemented
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Login Page
+2. Dummy data for placeholders.
+3. Search works for exisiting roles.
+4. Adding a new role is possible with the `add role` button. Even if any one is checked between web and mobile , that access point will be marked as accessed.
 
-## Build
+## Folder Structure
+We have main module which is `app.module`. Inside that, we have different components
+1. Dashboard
+2. Login
+3. Role Dialog 
+These Components are rendered inside `app.component` file. <br> Routes are stored in `app.routing` module.<br>
+`HTML` and `SCSS` files are part of component.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## How to run
 
-## Running unit tests
+1. Clone the repo or download zip folder.
+2. Open folder in editor and `npm install`.
+3. Build the project using `ng build`. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+4. Run `ng serve` to run the project. It can be viewed at `http://localhost:4200/`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Important Points
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. There is no validation to login. You can login with any valid email ID and password. It is not stored anywhere in the system.
+2. There are dummy data available on the dashboard page.
