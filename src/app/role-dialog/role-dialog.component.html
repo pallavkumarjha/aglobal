@@ -14,84 +14,84 @@
     <mat-step [stepControl]="accessForm" errorMessage="Address is required.">
       <form [formGroup]="accessForm">
         <ng-template matStepLabel>Fill out Access</ng-template>
-        <div style="display: flex;justify-content: space-between;">
-            <p style="width:33%">Description</p>
+        <div class="second-step">
+            <p class="w-33p">Description</p>
             <p>Web</p>
             <p>Mobile</p>              
         </div>
         <div formGroupName="home" class="sub-form">
-            <p style="width:33%">Home</p>
+            <p class="w-33p">Home</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="trips" class="sub-form">
-            <p style="width:33%">Trips</p>
+            <p class="w-33p">Trips</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="past_trips" class="sub-form">
-            <p style="width:33%">Past Trips</p>
+            <p class="w-33p">Past Trips</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="create_trip" class="sub-form">
-            <p style="width:33%">Create Trip</p>
+            <p class="w-33p">Create Trip</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="alerts" class="sub-form">
-            <p style="width:33%">Alerts</p>
+            <p class="w-33p">Alerts</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="alert_management" class="sub-form">
-            <p style="width:33%">Alert Management</p>
+            <p class="w-33p">Alert Management</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="sensors" class="sub-form">
-            <p style="width:33%">Sensors</p>
+            <p class="w-33p">Sensors</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="add_sensors" class="sub-form">
-            <p style="width:33%">Add Sensors</p>
+            <p class="w-33p">Add Sensors</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="routes" class="sub-form">
-            <p style="width:33%">Routes</p>
+            <p class="w-33p">Routes</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="add_routes" class="sub-form">
-            <p style="width:33%">Add Routes</p>
+            <p class="w-33p">Add Routes</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="users" class="sub-form">
-            <p style="width:33%">Users</p>
+            <p class="w-33p">Users</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="dashboard" class="sub-form">
-            <p style="width:33%">Dashboard</p>
+            <p class="w-33p">Dashboard</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="report" class="sub-form">
-            <p style="width:33%">Report</p>
+            <p class="w-33p">Report</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="role_settings" class="sub-form">
-            <p style="width:33%">Role Settings</p>
+            <p class="w-33p">Role Settings</p>
             <mat-checkbox formControlName="web"></mat-checkbox>
             <mat-checkbox formControlName="mobile"></mat-checkbox>               
         </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext (click)="submitRoleData()">Submit</button>
+        <div class="action-button-second">
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext (click)="submitRoleData()">Submit</button>
         </div>
       </form>
     </mat-step>
