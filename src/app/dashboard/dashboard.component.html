@@ -1,32 +1,34 @@
 <div class="dashboard">
     <div class="container">
         <div class="top-bar">
-            <mat-form-field>
-                <mat-label>User Status </mat-label>
-                <mat-select value="active" (change)="userStatusSelect($event)">
-                  <mat-option value="active">
-                    Total Active Users
-                  </mat-option>
-                  <!-- <mat-option value="inactive">
-                      Total Inactive Users
-                  </mat-option> -->
-                </mat-select>
-                <mat-hint>Total of <strong>{{roles.length}}</strong> roles</mat-hint>
-            </mat-form-field>
+            <div>
+                <select (change)="userStatusSelect($event)" style="border: none;
+                padding: 10px;
+                font-size: 20px;
+                color: #3f51b5;
+                background: transparent;">
+                    <option value="active" selected>
+                        Total Active Users
+                    </option>
+                </select>
+                <mat-hint style="position: relative;
+                left: -186px;
+                top: 20px;">Total of <strong>{{roles.length}}</strong> roles</mat-hint>
+            </div>
             <button mat-flat-button color="primary" (click)="openDialog()"> + Add Role</button>
         </div>
         <div class="search">
             <form [formGroup]="searchForm" class="example-form" (ngSubmit)="submitSearch(searchForm)">
-                <mat-form-field class="mat-elevation-z2 search-field">
-                    <span matPrefix>
-                        <mat-icon class="v-middle">search</mat-icon> &nbsp;
-                    </span>
-                    <input matInput placeholder="Search" formControlName="search" >
-                </mat-form-field>
+                <div class="input-container mat-elevation-z2" style="padding: 5px 10px;
+                border-radius: 15px;
+                background: white;">
+                    <mat-icon class="v-middle icon">search</mat-icon> &nbsp;
+                    <input placeholder="Search" class="input-field" (keyup)="applyRoleSearch($event)"  formControlName="search"  >
+                  </div>
             </form>
         </div>
         <div class="roles">
-            <mat-card class="example-card" *ngFor="let role of roles">
+            <mat-card class="example-card" *ngFor="let role of rolesData">
                 <mat-card-content class="text-center">
                     <div class="card-text-icon">
                         <label class="text-icon">{{role.name[0] | titlecase}}</label>
@@ -37,7 +39,7 @@
                     <ng-container>
                         <p class="card-access-points">{{role.totalAccess}} access points</p>
                     </ng-container>
-                    <mat-slide-toggle [checked]="role.isActive">Active</mat-slide-toggle>
+                    <mat-slide-toggle color="primary" [checked]="role.isActive">Active</mat-slide-toggle>
                 </mat-card-content>
             </mat-card>
         </div>
@@ -47,15 +49,18 @@
               
                 <!-- Position Column -->
                 <ng-container matColumnDef="Description">
-                  <th mat-header-cell *matHeaderCellDef class="w-20p"> Description </th>
-                  <td mat-cell *matCellDef="let element" class="w-20p"> {{element.name}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="w-20p"> Description </th>
+                    <td mat-cell *matCellDef="let element" class="w-20p">
+                        <mat-icon class="v-bottom icon">{{element.icon}}</mat-icon> &nbsp;
+                       {{element.name}} 
+                    </td>
                 </ng-container>
               
                 <!-- Name Column -->
                 <ng-container *ngFor="let col of roles" matColumnDef="{{col.name}}">
                     <th mat-header-cell *matHeaderCellDef class="w-16p"> {{col.name}} </th>
                     <td mat-cell *matCellDef="let element" class="w-16p">
-                        <mat-checkbox [checked]="element[col.columnName]">
+                        <mat-checkbox color="primary" [checked]="element[col.columnName]">
                         </mat-checkbox>
                     </td>
                 </ng-container>

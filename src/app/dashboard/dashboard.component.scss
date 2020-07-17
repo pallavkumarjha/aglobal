@@ -98,3 +98,19 @@ th{
 .w-16p{
   width: 16% !important;
 }
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 50%;
+}
+
+.icon {
+  margin: 5px 0px 0px 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: none;
+}

@@ -5,9 +5,9 @@
         <mat-form-field>
           <input matInput placeholder="Role Name" formControlName="name" required>
         </mat-form-field>
-        <mat-slide-toggle formControlName="isActive" [checked]="false">Active </mat-slide-toggle>
+        <mat-slide-toggle color="primary" formControlName="isActive" [checked]="false">Active </mat-slide-toggle>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
       </form>
     </mat-step>
@@ -20,74 +20,74 @@
             <p>Mobile</p>              
         </div>
         <div formGroupName="home" class="sub-form">
-            <p class="w-33p">Home</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">home</mat-icon> &nbsp; Home</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="trips" class="sub-form">
-            <p class="w-33p">Trips</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">location_on</mat-icon> &nbsp;Trips</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="past_trips" class="sub-form">
-            <p class="w-33p">Past Trips</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">location_on</mat-icon> &nbsp;Past Trips</p>
+            <mat-checkbox color="primary" color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="create_trip" class="sub-form">
-            <p class="w-33p">Create Trip</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">location_on</mat-icon> &nbsp;Create Trip</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="alerts" class="sub-form">
-            <p class="w-33p">Alerts</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">notification_important</mat-icon> &nbsp;Alerts</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="alert_management" class="sub-form">
-            <p class="w-33p">Alert Management</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">notification_important</mat-icon> &nbsp;Alert Management</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="sensors" class="sub-form">
-            <p class="w-33p">Sensors</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">assignment</mat-icon> &nbsp;Sensors</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="add_sensors" class="sub-form">
-            <p class="w-33p">Add Sensors</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">assignment</mat-icon> &nbsp;Add Sensors</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="routes" class="sub-form">
-            <p class="w-33p">Routes</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">assignment</mat-icon> &nbsp;Routes</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="add_routes" class="sub-form">
-            <p class="w-33p">Add Routes</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">assignment</mat-icon> &nbsp;Add Routes</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="users" class="sub-form">
-            <p class="w-33p">Users</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">assignment</mat-icon> &nbsp;Users</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="dashboard" class="sub-form">
-            <p class="w-33p">Dashboard</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">dashboard</mat-icon> &nbsp;Dashboard</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="report" class="sub-form">
-            <p class="w-33p">Report</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">assessment</mat-icon> &nbsp;Report</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div formGroupName="role_settings" class="sub-form">
-            <p class="w-33p">Role Settings</p>
-            <mat-checkbox formControlName="web"></mat-checkbox>
-            <mat-checkbox formControlName="mobile"></mat-checkbox>               
+            <p class="w-33p"> <mat-icon class="v-bottom icon">build</mat-icon> &nbsp;Role Settings</p>
+            <mat-checkbox color="primary" formControlName="web"></mat-checkbox>
+            <mat-checkbox color="primary" formControlName="mobile"></mat-checkbox>               
         </div>
         <div class="action-button-second">
           <button mat-raised-button matStepperPrevious>Back</button>

@@ -11,22 +11,24 @@ import { RoleDialogComponent } from '../role-dialog/role-dialog.component';
 })
 export class DashboardComponent implements OnInit {
 
+  rolesData;
+
   ELEMENT_DATA = [
     { id:1, name: 'Home',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:2, name: 'Trips',icon: 'home',supervisor: true, super_admin: true, fleet_manager: true, driver: true,admin: true},
-    { id:3, name: 'Past Trips',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:4, name: 'Create Trip',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:5, name: 'Alerts',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:6, name: 'Alert Management',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:7, name: 'Sensors',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:8, name: 'Add Sensors',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:9, name: 'Routes',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:10, name: 'Add Routes',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:11, name: 'Users',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:12, name: 'Add Users',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:13, name: 'Dashboard',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:14, name: 'Report',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
-    { id:15, name: 'Role Settings',icon: 'home',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:2, name: 'Trips',icon: 'location_on',supervisor: true, super_admin: true, fleet_manager: true, driver: true,admin: true},
+    { id:3, name: 'Past Trips',icon: 'location_on',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:4, name: 'Create Trip',icon: 'location_on',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:5, name: 'Alerts',icon: 'notification_important',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:6, name: 'Alert Management',icon: 'notification_important',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:7, name: 'Sensors',icon: 'assignment',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:8, name: 'Add Sensors',icon: 'assignment',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:9, name: 'Routes',icon: 'assignment',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:10, name: 'Add Routes',icon: 'assignment',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:11, name: 'Users',icon: 'assignment',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:12, name: 'Add Users',icon: 'assignment',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:13, name: 'Dashboard',icon: 'dashboard',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:14, name: 'Report',icon: 'assessment',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
+    { id:15, name: 'Role Settings',icon: 'build',supervisor: true, super_admin: true, fleet_manager: false, driver: true,admin: true},
   ];
 
   roles = [
@@ -60,7 +62,6 @@ export class DashboardComponent implements OnInit {
       columnName:'admin',
       totalAccess: this.getAccessPoints('admin')
     }
-
   ]
 
   getAccessPoints(role){
@@ -83,6 +84,9 @@ export class DashboardComponent implements OnInit {
     this.searchForm = new FormGroup({
     search: new FormControl(null),
    });
+
+   this.rolesData = [...this.roles];
+
   }
 
   submitSearch(form){
@@ -100,8 +104,9 @@ export class DashboardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.transformData(result);
-      // this.animal = result;
+      if(result){
+        this.transformData(result);
+      }
     });
   }
 
@@ -162,8 +167,18 @@ export class DashboardComponent implements OnInit {
       totalAccess: this.getAccessPoints(roleName),
     };
     this.roles.push(obj);
+    this.rolesData  = [...this.roles];
     this.displayedColumns.push(result.name);
-    console.log(this.ELEMENT_DATA);
+  }
+
+  applyRoleSearch(evt: Event){
+    this.rolesData = [...this.roles];
+    let filter_value = (evt.target as HTMLInputElement).value;
+    this.rolesData = this.rolesData.filter(ele => {
+      if(ele.name.toLowerCase().includes(filter_value.toLowerCase())){
+        return ele;
+      }
+    });
   }
 }
 
