@@ -11,13 +11,13 @@ This Angular project was generated with [Angular CLI](https://github.com/angular
 1. Login Page
 2. Dummy data for placeholders.
 3. Search works for exisiting roles.
-4. Adding a new role is possible with the `add role` button. Even if any one is checked between web and mobile , that access point will be marked as accessed.
+4. Adding a new role is possible with the `add role` button. (Even if any one is checked between web and mobile , that access point will be marked as accessed.)
 
 ## Folder Structure
 We have main module which is `app.module`. Inside that, we have different components
 1. Dashboard
 2. Login
-3. Role Dialog 
+3. Role Dialog <br>
 These Components are rendered inside `app.component` file. <br> Routes are stored in `app.routing` module.<br>
 `HTML` and `SCSS` files are part of component.
 
