@@ -106,6 +106,7 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result){
         this.transformData(result);
+        console.log("resssssssssssssss",result);
       }
     });
   }
@@ -162,7 +163,7 @@ export class DashboardComponent implements OnInit {
     });
     let obj = {
       name: `${result.name}`,
-      isActive: (result.isActive == 'true'),
+      isActive: result.isActive == true,
       columnName: roleName,
       totalAccess: this.getAccessPoints(roleName),
     };

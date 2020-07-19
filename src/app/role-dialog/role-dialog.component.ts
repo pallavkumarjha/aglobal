@@ -35,7 +35,7 @@ export class RoleDialogComponent implements OnInit {
   ngOnInit(): void {
     this.roleForm = this._formBuilder.group({
       name: ['', Validators.required],
-      isActive: [null, Validators.required]
+      isActive: [null]
     });
 
     this.accessForm = this._formBuilder.group({
@@ -109,7 +109,7 @@ export class RoleDialogComponent implements OnInit {
   transformData(roleForm, accessForm){
     let data = {
       name: roleForm.name,
-      isActive: roleForm.isActive.mobile || roleForm.isActive.web,
+      isActive: roleForm.isActive || roleForm.isActive,
       10: accessForm.add_routes || accessForm.add_routes,
       12: accessForm.add_users.mobile || accessForm.add_users.web,
       8: accessForm.add_sensors.mobile || accessForm.add_sensors.web,

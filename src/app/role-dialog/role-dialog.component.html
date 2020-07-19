@@ -10,7 +10,7 @@
         <mat-form-field style="margin-top: 10px;">
           <input matInput placeholder="Role Name" formControlName="name" required>
         </mat-form-field>
-        <mat-slide-toggle color="primary" formControlName="isActive" [checked]="false">Active </mat-slide-toggle>
+        <mat-slide-toggle color="primary" formControlName="isActive">Active </mat-slide-toggle>
         <div style="display: flex;justify-content: space-between;">
             <button mat-raised-button color="secondary" (click)="closeDialog()" >Cancel</button>
           <button mat-raised-button color="primary" matStepperNext>Next</button>
