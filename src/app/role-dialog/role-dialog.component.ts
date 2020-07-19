@@ -129,4 +129,8 @@ export class RoleDialogComponent implements OnInit {
 
     this.dialogRef.close(data);
   }
+
+  closeDialog(){
+    this.dialogRef.close();
+  }
 }

@@ -15,7 +15,7 @@
                 left: -186px;
                 top: 20px;">Total of <strong>{{roles.length}}</strong> roles</mat-hint>
             </div>
-            <button mat-flat-button color="primary" (click)="openDialog()"> + Add Role</button>
+            <button mat-stroked-button color="primary" (click)="openDialog()"> + Add Role</button>
         </div>
         <div class="search">
             <form [formGroup]="searchForm" class="example-form" (ngSubmit)="submitSearch(searchForm)">

@@ -17,3 +17,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.card-text-icon{
+    font-size:36px;
+    display: inline-block;
+    .text-icon{
+      padding: 50px;
+      background: #f9ebea;
+      display: inline-block;
+      border-radius: 50%;
+      color: #f44336;
+    }
+}
